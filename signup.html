@@ -56,6 +56,9 @@ window.onscroll = function() {
           // Validation successful - submit the form
           document.getElementById('signupForm').submit();
         }
+        function openManagePage() {
+    window.location.href = "managenew.html";
+  }
       </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
@@ -63,12 +66,12 @@ window.onscroll = function() {
 </head>
 <body>
   <header class="header" id="navbar">
-        <a href="file:///D:/workspace/main%20pfm/main%20page%20copy.html#" class="logo">FINANCER.COM</a>
+        <a href="file:///D:/workspace/main%20pfm/index.html" class="logo">FINANCER.COM</a>
         <nav class="navbar">
-            <a class="active" href="file:///D:/workspace/main%20pfm/main%20page%20copy.html#">Home</a>
+            <a class="active" href="file:///D:/workspace/main%20pfm/index.html">Home</a>
             <a href="#">Contact</a>
             <a href="file:///D:/workspace/main%20pfm/about.html">About</a>
-            <a href="#">Manage</a>
+            
             <a href="file:///D:/workspace/main%20pfm/library.html">Library</a>
         </nav>
         <div id="buttons-container">
@@ -93,7 +96,7 @@ window.onscroll = function() {
     <input type="password" id="password" placeholder="password" minlength="8" required>
     
     <br>
-    <button id="login" type="submit">Signup</button>
+    <button id="login" type="button"  onclick="openManagePage()">Signup</button>
   </form><br>
   <h6>Already have an account? <a href="file:///D:/workspace/main%20pfm/login.html?#">login</a></h6>
 </div>
