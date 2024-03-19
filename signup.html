@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <script>
+      let prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+   
+
+        function validateForm(event) {
+          event.preventDefault(); // Prevent the default form submission
+            
+          // Get form inputs
+          const firstName = document.getElementById('firstName').value.trim();
+          const lastName = document.getElementById('lastName').value.trim();
+          const usernameEmail = document.getElementById('usernameEmail').value.trim();
+          const password = document.getElementById('password').value.trim();
+            
+          // Check if inputs are empty
+          if (firstName === '' || lastName === '' || usernameEmail === '' || password === '') {
+            alert('Please fill in all fields');
+            return false;
+          }
+          
+          // Check if password meets minimum length requirement
+          if (password.length < 8) {
+            alert('Password must be at least 8 characters long');
+            return false;
+          }
+          
+          // Check if email contains "@" and a valid domain
+          const atIndex = usernameEmail.indexOf('@');
+          if (atIndex === -1) {
+            alert('Please enter a valid email address');
+            return false;
+          }
+          
+          const domain = usernameEmail.substring(atIndex + 1);
+          if (!/^[a-zA-Z0-9.-]+$/.test(domain)) {
+            alert('Please enter a valid domain in the email address');
+            return false;
+          }
+      
+          // Validation successful - submit the form
+          document.getElementById('signupForm').submit();
+        }
+      </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="csscopy.css">
+</head>
+<body>
+  <header class="header" id="navbar">
+        <a href="file:///D:/workspace/main%20pfm/main%20page%20copy.html#" class="logo">FINANCER.COM</a>
+        <nav class="navbar">
+            <a class="active" href="file:///D:/workspace/main%20pfm/main%20page%20copy.html#">Home</a>
+            <a href="#">Contact</a>
+            <a href="file:///D:/workspace/main%20pfm/about.html">About</a>
+            <a href="#">Manage</a>
+            <a href="file:///D:/workspace/main%20pfm/library.html">Library</a>
+        </nav>
+        <div id="buttons-container">
+            <button type="button"><a href="file:///D:/workspace/main%20pfm/login.html?#">LOGIN</a></button>
+            <button type="button"><a href="file:///D:/workspace/main%20pfm/signup.html#">SIGN UP</a></button>
+        </div>
+    </header>
+    <div class="loginimage"></div>
+    <div class="container">
+        <div class="left-box">
+            <!-- Content of the left box goes here -->
+            
+<div class="login">
+    <h1 id="signupfont">SIGNUP</h1>
+  <form id="signupForm" onsubmit="validateForm(event)">
+    <input type="text" id="firstName" placeholder="first Name" required>
+    
+    <input type="text" id="lastName" placeholder="last Name" required>
+    
+    <input type="text" id="usernameEmail" placeholder="Email" required>
+
+    <input type="password" id="password" placeholder="password" minlength="8" required>
+    
+    <br>
+    <button id="login" type="submit">Signup</button>
+  </form><br>
+  <h6>Already have an account? <a href="file:///D:/workspace/main%20pfm/login.html?#">login</a></h6>
+</div>
+        </div>
+        <div class="login">
+            <!-- Content of the login form goes here -->
+            <img src="loginimage.jpg">
+            
+        </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section">
+              <h3>Get to Know Us</h3>
+              <ul>
+                  <li>About Us</li>
+                  <li>Careers</li>
+                  <li>Press Releases</li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h3>Developers</h3>
+              <ul>
+                  <li>Ananya Tuli</li>
+                  <li>Amrit Kaur</li>
+                  <li>Anirudh Sharma</li>
+              </ul>
+          </div>
+          <div class="footer-section">
+            <h3>E-mail</h3>
+            <ul>
+                <li>ananya1690.be23@gmail.com</li>
+                <li>armit1691.be23@gmail.com</li>
+                <li>anirudh1692.be23@gmail.com</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+          <h3>phone</h3>
+          <ul>
+              <li>+91 965325720</li>
+              <li>+91 986837434</li>
+              <li>+91 998765245</li>
+          </ul>
+      </div>
+      </div>
+    </footer>
+    
+    
+   
+</body>
+</html>
