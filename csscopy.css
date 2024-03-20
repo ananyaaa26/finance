@@ -312,10 +312,10 @@ h6 a:link {
     cursor:pointer;
 
   }
-  .card:hover{
+  /* .card:hover{
     background-color:#af87c6;
     transition:0.3s;
-  }
+  } */
   .card .icon{
     font-size:30px;
     margin-bottom:10px;
